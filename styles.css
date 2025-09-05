@@ -7,6 +7,10 @@
   --rojo-50: rgba(194, 12, 12, 0.5);
   --rojo-10: rgba(194, 12, 12, 0.1);
   --crema: #FFF4E9;
+  --crema-10: rgb(255, 244, 233, 0.1);
+  --crema-30: rgb(255, 244, 233, 0.3);
+  --crema-50: rgb(255, 244, 233, 0.5);
+  --crema-70: rgb(255, 244, 233, 0.7);
   --gris: #D3CEC8;
   --gris-10: rgba(211, 206, 200, 0.1);
   --gris-50: rgba(211, 206, 200, 0.5);
@@ -398,7 +402,7 @@ nav > ul > li:hover {
 }
 
 .empleo h2 {
-  font-size: 3.8rem;
+  font-size: 3rem;
   margin-top: 0;
 }
 
@@ -412,15 +416,22 @@ nav > ul > li:hover {
 }
 
 .empleo--container p {
-  width: 50%;
+  width: 60%;
   text-align: right;
 }
 
 .empleo--img {
   width: 30%;
-  max-width: 300px;
+  max-width: 400px;
   position: absolute;
-  left: 16%;
+  left: 12%;
+  filter: brightness(1.1) drop-shadow(0 0 6px rgba(180,0,0,.3));
+  transition: all .3s ease;
+}
+
+.empleo--img:hover {
+  transform: translateY(-5px) scale(1.1);
+  filter: brightness(1.15)  drop-shadow(0 0 1px rgba(180,0,0,.3));
 }
 
 .empleo button {
@@ -439,11 +450,146 @@ nav > ul > li:hover {
 /* -------------------------- DISTRIBUIDORES -------------------------- */
 
 .distribuidores {
+  position: relative;
+  width: 100%;
   min-height: 100vh;
   background-color: var(--rojo);
+  color: var(--crema);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
+.distribuidores > .location-pin-white {
+  position: absolute;
+  left: 50px;
+  top: -250px;
+  transform: rotate(-90deg);
+  opacity: .5;
+}
 
+.distribuidores > h2 {
+  font-size: 3.6rem;
+  margin: 0;
+  margin-top: 5rem;
+}
+
+.distribuidores > p {
+  width: 70%;
+  font-size: 1.2rem;
+}
+
+.testimonios--container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+  gap: 2rem;
+}
+
+.testimonios--card {
+  border: 1px solid var(--crema-50);
+  border-radius: 20px;
+  background-color: var(--crema-10);
+  color: var(--blanco);
+  padding: 1rem 2rem;
+  box-shadow: inset -10px -20px 50px 10px var(--crema-10);
+  transition: all .3s ease;
+  user-select: none;
+}
+
+.testimonios--card:hover {
+  background-color: var(--rojo-full);
+  transform: translateY(-5px);
+}
+
+.testimonios--card-quote {
+  font-family: 'Casanova Scotia';
+  font-size: 70px;
+  margin: 0;
+  margin-left: 1rem;
+  position: relative;
+  color: var(--blanco);
+}
+
+.testimonios--card-quote::before {
+  content: '';
+  background-color: var(--crema-50);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  left: -10px;
+  top: -5px;
+}
+
+.testimonios--card > p {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.testimonios--card > h3 {
+  margin: 0;
+}
+
+.testimonios--card > h4 {
+  margin: 0 .7rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.distribuidores--convocatoria {
+  position: relative;
+  width: 65%;
+  margin-top: 3rem;
+  margin-bottom: 9rem;
+  font-size: 1.2rem;
+  background-color: var(--blanco);
+  color: var(--negro);
+  padding: 3rem;
+  border-radius: 18px;
+}
+
+.distribuidores--convocatoria::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-top: 100px solid var(--blanco);
+  position: absolute;
+  bottom: -100px;
+  right: 45%;
+}
+
+.distribuidores--convocatoria > img {
+  width: 90px;
+  border: 1px solid var(--rojo-50);
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  top: -45px;
+  background-color: var(--blanco);
+  left: 43%;
+  box-shadow: 0 7px 12px 0 var(--gris);
+}
+
+.distribuidores--convocatoria > h3 {
+  margin: 0;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.distribuidores--convocatoria > h4 {
+  color: var(--rojo-full);
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+}
 
 
 /* -------------------------- FOOTER -------------------------- */
@@ -495,6 +641,12 @@ footer {
 }
 
 /* -------------------------- RESPONSIVE -------------------------- */
+
+@media screen and (max-width: 1000px) {
+  .distribuidores--convocatoria {
+    font-size: 1rem;
+  }
+}
 
 @media screen and (max-width: 768px) {
 
