@@ -677,7 +677,33 @@ footer {
 }
 
 
+/* -------------------------- USUARIOS -------------------------- */
 
+.usuarios {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--crema);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.usuarios h3 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.usuarios button {
+  background-color: var(--rojo);
+  color: var(--crema);
+}
+
+.usuarios button:hover {
+  background-color: var(--rojo-full);
+  color: var(--blanco);
+  cursor: pointer;
+}
 
 
 /* -------------------------- ANIMACIONES -------------------------- */
@@ -931,7 +957,7 @@ footer {
   .quienessomos {
     padding-bottom: 3rem;
   }
-  
+
   .quienessomos--content h2 {
     margin-top: 2rem;
     align-self: center;
@@ -940,6 +966,7 @@ footer {
 
   .quienessomos--content p {
     font-size: 1rem;
+    text-align: justify;
   }
 
   .quienessomos--content h3 {
@@ -977,6 +1004,9 @@ footer {
 
 /* -------------------------- MOBILE UBICACIÓN -------------------------- */
 
+  .ubicacion--content p {
+    text-align: justify;
+  }
 
   .ubicacion--img {
     width: 300px;
@@ -997,7 +1027,58 @@ footer {
     right: 30px;
   }
 
-/* -------------------------- MOBILE TESTIMONIOS -------------------------- */
+
+/* -------------------------- MOBILE EMPLEO -------------------------- */
+
+  .empleo {
+    padding: 3rem 0;
+    padding-bottom: 4rem;
+  }
+
+  .empleo h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 1rem 3rem;
+  }
+
+  .empleo--container {
+    align-items: center;
+  }
+
+  .empleo--container p {
+    font-size: 1rem;
+    text-align: justify;
+    width: unset;
+  }
+
+  .empleo--container ul {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .empleo--img {
+    position: relative;
+    align-self: center;
+    left: unset;
+    width: 50vw;
+    z-index: 5;
+  }
+
+  .empleo--container a {
+    z-index: 5;
+  }
+
+/* -------------------------- MOBILE DISTRIBUIDORES -------------------------- */
+
+
+  .distribuidores h2 {
+    font-size: 2rem;
+  }
+
+  .distribuidores p {
+    font-size: 1rem;
+    text-align: justify;
+  }
 
   .testimonios--container {
     display: flex;
@@ -1069,6 +1150,21 @@ footer {
     border-right: 40px solid transparent;
     border-top: 46px solid var(--blanco);
     bottom: -45px;
+  }
+
+
+/* -------------------------- MOBILE USUARIOS -------------------------- */
+
+  .usuarios {
+    height: 100lvh;
+  }
+
+  .usuarios h3 {
+    font-size: 1rem;
+  }
+
+  .usuarios img {
+    width: 70vw;
   }
 
 }
