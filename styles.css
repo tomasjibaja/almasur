@@ -63,6 +63,13 @@ a {
   display: none;
 }
 
+.d-flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 main {
   min-height: 100vh;
   position: relative;
@@ -74,16 +81,15 @@ main {
 }
 
 nav {
+  background-color: var(--crema);
   font-weight: 100;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 3rem;
+  position: relative;
+  width: 100%;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 #nav--checkbox {
@@ -96,6 +102,7 @@ nav {
 
 .nav--logo {
   width: 100px;
+  padding-left: 2rem;
 }
 
 nav > ul {
@@ -124,7 +131,8 @@ nav > ul > li:hover {
 /* ---------------------- HERO ------------------------- */
 
 .hero {
-  min-height: 100vh;
+  width: 100%;
+  min-height: calc(100vh - 94px);
   background-color: var(--crema);
   display: flex;
   flex-direction: column;
@@ -162,7 +170,9 @@ nav > ul > li:hover {
 }
 
 .hero--content > p {
-  font-size: 1.2rem;
+  font-size: 2rem;
+  padding: 2rem;
+  width: 100%;
 }
 
 .hero--content button {
@@ -348,6 +358,7 @@ nav > ul > li:hover {
 .quienessomos--content a button {
   color: var(--rojo);
   background-color: var(--crema);
+  margin-bottom: 2rem;
 }
 
 .quienessomos--content a button:hover {
@@ -440,7 +451,8 @@ nav > ul > li:hover {
 
 .empleo {
   width: 100%;
-  min-height: 100vh;
+  min-height: 700px;
+  height: 100vh;
   background-color: var(--crema);
   color: var(--negro);
   display: flex;
@@ -575,6 +587,7 @@ nav > ul > li:hover {
 }
 
 .testimonios--card > p {
+  min-height: 30%;
   font-size: 1rem;
   font-weight: 200;
 }
@@ -672,8 +685,26 @@ nav > ul > li:hover {
 /* -------------------------- FOOTER -------------------------- */
 
 footer {
-  background-color: var(--gris);
-  height: 200px;
+  background-color: var(--rojo-70);
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  color: var(--blanco);
+}
+
+footer p a {
+  text-decoration: none;
+  color: var(--blanco);
+  font-weight: 500;
+}
+
+footer p img {
+  height: 2rem;
+  filter: invert(1);
+  margin-left: 1rem;
 }
 
 
@@ -733,14 +764,29 @@ footer {
   to {transform: translate(10px,-100px);}
 }
 
+@keyframes hero-burgers-mobile {
+  from {transform: rotate(0deg) translateX(0);}
+  to {transform: translate(5px,-50px);}
+}
+
 @keyframes hero-potato {
   from {transform: rotate(0deg) translateX(0);}
   to {transform: translate(100px,10px) rotate(30deg);}
 }
 
+@keyframes hero-potato-mobile {
+  from {transform: rotate(0deg) translateX(0);}
+  to {transform: translate(50px,5px) rotate(30deg);}
+}
+
 @keyframes hero-pepas {
   from {transform: rotate(0deg) translateX(0);}
   to {transform: translate(-50px,50px) rotate(-25deg);}
+}
+
+@keyframes hero-pepas-mobile {
+  from {transform: rotate(0deg) translateX(0);}
+  to {transform: translate(-25px,25px) rotate(-25deg);}
 }
 
 @keyframes pin-jump {
@@ -855,11 +901,14 @@ footer {
   }
 
   nav {
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    justify-content: space-between;
   }
 
   .nav--open-menu {
     font-size: 2rem;
+    padding-right: 2rem;
   }
 
   .nav--close-menu {
@@ -898,6 +947,8 @@ footer {
   /* -------------------------- MOBILE HERO -------------------------- */
 
   .hero {
+    min-height: calc(100vh - 4.2rem);
+    justify-content: space-evenly;
     gap: 1rem;
   }
 
@@ -1089,6 +1140,7 @@ footer {
 
   .testimonios--card {
     z-index: 5;
+    width: 90%;
     height: 200px;
     background-color: var(--rojo);
     margin-bottom: -190px;
