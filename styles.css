@@ -702,8 +702,7 @@ footer p a {
 }
 
 footer p img {
-  height: 2rem;
-  filter: invert(1);
+  height: 1.8rem;
   margin-left: 1rem;
 }
 
@@ -1226,16 +1225,11 @@ footer p img {
     padding: 0 1rem;
     font-size: .9rem;
   }
-  
-  footer p a {
-  }
-  
+
   footer p img {
     height: 1.4rem;
-    filter: invert(1);
     margin-left: .5rem;
   }
-
 
 
 }
